@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>João Victor Valentim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <img src="img/html.png" class="layer" />
+      <h2>João Victor Valentim</h2>
+      <h3>Front-end Dev</h3>
+    </section>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>João Victor Valentim</title>
+  </head>
+  <body>
+    <section>
+      <img src="img/1.png" data-speed="4" class="layer" />
+      <img src="img/2.png" data-speed="-3" class="layer" />
+      <img src="img/3.png" data-speed="3" class="layer" />
+      <img src="img/4.png" data-speed="2" class="layer" />
+      <img src="img/5.png" data-speed="-2" class="layer" />
+      <img src="img/6.png" data-speed="6" class="layer" />
+      <img src="img/7.png" data-speed="5" class="layer" />
+      <img src="img/8.png" data-speed="-6" class="layer" />
+      <img src="img/9.png" data-speed="-5" class="layer" />
+      <img src="img/10.png" data-speed="4" class="layer" />
+      <img src="img/11.png" data-speed="-4" class="layer" />
+      <img src="img/12.png" data-speed="7" class="layer" />
+      <h2>João Victor Valentim</h2>
+      <h3>Front-end Dev</h3>
+    </section>
+    <script type="text/javascript">
+      const speeds = [];
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min; // recebe 2 valores e gera um numero aleatorio retornando um numero inteiro maior que zero
+      }
+
+      function moveObjects(e) {
+        this.querySelectorAll(".layer").forEach((layer, index) => {
+          speeds[index] = speeds[index] || rand(-8, 8) || layer.dataset.speed;
+          const x = (window.innerWidth - e.pageX * speeds[index]) / 100;
+          const y = (window.innerHeight - e.pageY * speeds[index]) / 100;
+          // console.log(rand(-8,8));
+          layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+      }
+      document.addEventListener("mousemove", moveObjects);
+    </script>
+  </body>
+</html>
